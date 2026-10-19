@@ -15,7 +15,7 @@
     "db:init": "wrangler d1 execute cf2past-db --remote --file=schema.sql"
   },
   "devDependencies": {
-    "@cloudflare/vitest-plugin": "^1.1.5",
+    "@cloudflare/vitest-plugin": "^1.4.3",
     "@cloudflare/workers-types": "^5.20260911.1",
     "typescript": "^5.7.0",
     "vitest": "^4.1.11",
