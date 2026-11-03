@@ -1,7 +1,14 @@
-import type { Env } from '../src/index';
+import type { Env as WorkerEnv } from '../src/index';
 
-declare module 'cloudflare:workers' {
-  interface ProvidedEnv extends Env {
-    TEST_SCHEMA: string;
+declare global {
+  namespace Cloudflare {
+    interface Env extends WorkerEnv {
+      TEST_SCHEMA: string;
+    }
+
+    interface GlobalProps {
+      mainModule: typeof import('../src/index');
+      durableNamespaces: 'Room';
+    }
   }
 }
